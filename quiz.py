@@ -21,5 +21,5 @@ while True:
 	elif questionAsk == ("quit"):
 		exit() 
 	else:
-		print("incorrect")
+		print("incorrect,", (answer))
 		continue
