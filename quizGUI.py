@@ -1,5 +1,3 @@
-#Work in progress
-
 from tkinter import *
 import csv
 import random
@@ -16,9 +14,9 @@ root.geometry("300x200")
 question = random.choice(quizList)
 answer = quiz[question]
 # Make a label for the kana
-label = Label(text=question)
-label.config(font=("Courier", 60))
-label.pack()
+k_label = Label(text=question)
+k_label.config(font=("Courier", 60))
+k_label.pack()
 # Answer box
 a = Entry(root)
 a.pack()
@@ -27,6 +25,14 @@ a.pack()
 fb_label = Label(text="Unanswered")
 fb_label.pack()
 
+
+def randomKana():
+    global question
+    question = random.choice(quizList)
+    global answer
+    answer = quiz[question]
+    k_label.config(text=(question))
+
 def submit_a(root):
     a_s = a.get()
     print ("a_s is:", a_s)
@@ -34,7 +40,7 @@ def submit_a(root):
     if a_s == (answer):
         print("correct")
         fb_label.config(text='Correct')
-
+        randomKana()
     else:
         print("incorrect,", (answer))
         fb_label.config(text='Incorrect')
