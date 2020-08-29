@@ -1,7 +1,6 @@
 from tkinter import *
 import csv
 import random
-
 # Import and list questions from data.csv
 quiz = dict(csv.reader(open("data.csv", encoding='utf-8')))
 quizList = list(quiz.keys())
@@ -10,21 +9,19 @@ root = Tk()
 # Window settings
 root.title("Kana Quiz")
 root.geometry("300x200")
-# Get quiz variable
+# Quiz variable
 question = random.choice(quizList)
 answer = quiz[question]
-# Make a label for the kana
+# Kana label display
 k_label = Label(text=question)
 k_label.config(font=("Courier", 60))
 k_label.pack()
 # Answer box
 a = Entry(root)
 a.pack()
-
-# Label for feedback
+# Label for input feedback
 fb_label = Label(text="Unanswered")
 fb_label.pack()
-
 
 def randomKana():
     global question
@@ -34,7 +31,6 @@ def randomKana():
     answer = quiz[question]
     k_label.config(text=(question))
     a.delete(0, 'end')
-
 
 def submit_a(root):
     a_s = a.get()
@@ -48,10 +44,5 @@ def submit_a(root):
         print("incorrect,", (answer))
         fb_label.config(text='Incorrect')
 
-
-
-
 a.bind("<Return>", submit_a)
-
-
 root.mainloop()
