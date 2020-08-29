@@ -28,10 +28,13 @@ fb_label.pack()
 
 def randomKana():
     global question
-    question = random.choice(quizList)
     global answer
+    global a
+    question = random.choice(quizList)
     answer = quiz[question]
     k_label.config(text=(question))
+    a.delete(0, 'end')
+
 
 def submit_a(root):
     a_s = a.get()
