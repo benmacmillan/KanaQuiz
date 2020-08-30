@@ -15,7 +15,7 @@ answer = quiz[question]
 # Kana label display
 k_label = Label(text=question)
 k_label.config(font=("Courier", 60))
-k_label.pack()
+k_label.pack(pady=30)
 # Answer box
 a = Entry(root)
 a.pack()
