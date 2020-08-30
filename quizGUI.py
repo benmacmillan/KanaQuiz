@@ -37,10 +37,10 @@ def submit_a(root):
     a_s = a.get()
     if a_s == answer:
         print("correct")
-        fb_label.config(text='Correct')
+        fb_label.config(text='Correct', fg='blue')
         randomkana()
     else:
         print("incorrect,", answer)
-        fb_label.config(text='Incorrect')
+        fb_label.config(text='Incorrect', fg='red')
 a.bind("<Return>", submit_a)
 root.mainloop()
