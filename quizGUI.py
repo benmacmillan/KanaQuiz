@@ -1,6 +1,6 @@
-from tkinter import *
 import csv
 import random
+from tkinter import *
 
 # tkinter setup and window config
 root = Tk()
